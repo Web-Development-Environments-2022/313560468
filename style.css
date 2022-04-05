@@ -15,6 +15,7 @@
 	padding:16px 32px;
 	float:left;
 	font-style: italic;
+	height: 27px;
 }
 
 #menu a
@@ -27,6 +28,7 @@
 	background-color: black;
 }
 
+
 .section
 {
 	text-align: center;
@@ -38,13 +40,14 @@
 
 .sub-title
 {
-	border-bottom: 3px solid #282A35;
+	border-bottom: 5px solid #282A35;
 	border-radius: 20px;
-	line-height: 3px;
+	line-height:5px;
 }
 
 .sub-title-text
 {
 	padding:0 10px;
+	font-size:20px;
 	background:#fff;
 }
