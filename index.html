@@ -5,6 +5,7 @@
 </head>
 <body>
 <div id="menu">
+<img src="images/grandpa.png" style="float: left; height: 60px; width: 60px;"></img>
 <li><a href="#about">About Me</a></li>
 <li><a href="#photos">My Photos</a></li>
 <li><a href="#playlist">My Playlist</a></li>
@@ -13,7 +14,7 @@
 <li><a href="#spa">Q&A</a></li>
 <li><a href="#contact">Contact Me</a></li>
 </div>
-		  
+
 <section id="about" class="section">
 <br/>
 <br/>
@@ -21,17 +22,7 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
+<p class="sub-title"><span class="sub-title-text">about me</span></p>
 <br/>
 <br/>
 <br/>
@@ -54,8 +45,9 @@ about me
 <br/>
 <br/>
 <br/>
-my photos
+<p class="sub-title"><span class="sub-title-text">my photos</span></p>
 <br/>
+<img id="carl" src="images/carl1.png" onClick="nextImage()" style="width: 800px; height: 600px;"/>
 <br/>
 <br/>
 </section>
@@ -70,16 +62,10 @@ my photos
 <br/>
 <br/>
 <br/>
+<p class="sub-title"><span class="sub-title-text">my playlist</span></p>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL2l4T5NjtOsqnMkEPnYHnQG_qERKEzVjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 </section>
 
@@ -90,17 +76,7 @@ my playlist
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
+<p class="sub-title"><span class="sub-title-text">give me a like</span></p>
 <br/>
 <br/>
 <br/>
@@ -123,13 +99,15 @@ give me a like
 <br/>
 <br/>
 <br/>
-scan my code
+<p class="sub-title"><span class="sub-title-text">scan my code</span></p>
 <br/>
 <br/>
+<img src="images/QR.png" style="height: auto; width: auto;"></img>
 <br/>
 </section>
 
 <section id="spa" class="section">
+<!-- <br/>
 <br/>
 <br/>
 <br/>
@@ -142,11 +120,10 @@ scan my code
 <br/>
 <br/>
 <br/>
+<br/> -->
 <br/>
 <br/>
-<br/>
-<br/>
-ans
+<p class="sub-title"><span class="sub-title-text">ans</span></p>
 <br/>
 <br/>
 <br/>
@@ -169,7 +146,7 @@ ans
 <br/>
 <br/>
 <br/>
-contact me
+<p class="sub-title"><span class="sub-title-text">contact me</span></p>
 <br/>
 <br/>
 <br/>
@@ -180,7 +157,7 @@ contact me
 $(function(){
   $("#nav a").click(function(e){
     e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
+    $('html,body').scrollTo(this.hash,this.hash);
   });
 });
 </script>
@@ -188,6 +165,15 @@ $(function(){
  $(document).scroll(function() {
     $('#menu').toggle($(this).scrollTop()>1000)
  });​
+ </script>
+ <script type="text/javascript">
+  const carls = ["images/carl1.png","images/carl2.jpg","images/carl3.jpg","images/carl4.jpg"];
+  let i = 1;
+  function nextImage() {
+    document.getElementById("carl").src = carls[i];
+    i += 1;
+    if(i === 4){i = 0}
+  }
  </script>
 </body>
 </html>
