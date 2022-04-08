@@ -16,13 +16,13 @@
     transition: width 0.3s;
     padding: 13px;
     margin-bottom: 15px;
-    width:95%;
+    width:100%;
     box-sizing: border-box;
 }
 
 .emojipicker-container textarea:hover
 {
-	width: 100%;
+	width: 105%;
 
 }
 

@@ -84,13 +84,13 @@ form {
   transition: width 0.3s;
   padding: 13px;
   margin-bottom: 15px;
-  width:95%;
+  width:100%;
   box-sizing: border-box;
 }
 
 .feedback-input:hover
 {
-	width: 100%;
+	width: 105%;
 
 }
 
@@ -104,7 +104,7 @@ textarea {
 
 [type="submit"] {
   font-family: sans-serif;
-  width: 95%;
+  width: 100%;
   background:#282A35;
   border-radius:5px;
   border:0;
@@ -119,5 +119,4 @@ textarea {
 [type="submit"]:hover
 {
 	background:black;
-	width: 100%;
 }
