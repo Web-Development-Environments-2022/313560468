@@ -22,7 +22,7 @@
 <br/>
 <br/>
 <br/>
-<p class="sub-title"><span class="sub-title-text">about me</span></p>
+<h1 class="title">about me</h1>
 <br/>
 <br/>
 <br/>
@@ -45,9 +45,9 @@
 <br/>
 <br/>
 <br/>
-<p class="sub-title"><span class="sub-title-text">my photos</span></p>
+<h1 class="title">my photos</h1>
 <br/>
-<img id="carl" src="images/carl1.png" onClick="nextImage()" style="width: 800px; height: 600px;"/>
+<img id="carl" src="images/carl1.png" onClick="nextImage()" style="width: 1000px; height: 750px; align-self:center;"/>
 <br/>
 <br/>
 </section>
@@ -55,17 +55,10 @@
 <section id="playlist" class="section">
 <br/>
 <br/>
+<h1 class="title">my playlist</h1>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<p class="sub-title"><span class="sub-title-text">my playlist</span></p>
-<br/>
-<br/>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL2l4T5NjtOsqnMkEPnYHnQG_qERKEzVjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="840" height="472" src="https://www.youtube.com/embed/videoseries?list=PL2l4T5NjtOsqnMkEPnYHnQG_qERKEzVjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 </section>
 
@@ -73,33 +66,16 @@
 <br/>
 <br/>
 <br/>
+<h1 class="title">give me a like</h1>
 <br/>
-<br/>
-<br/>
-<p class="sub-title"><span class="sub-title-text">give me a like</span></p>
-<br/>
-<br/>
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FUPCarlFredricksen%2F&width=450&layout=standard&action=like&size=small&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 <br/>
 </section>
 
 <section id="qrcoder" class="section">
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<p class="sub-title"><span class="sub-title-text">scan my code</span></p>
+<h1 class="title">scan my code</h1>
 <br/>
 <br/>
 <img src="images/QR.png" style="height: auto; width: auto;"></img>
@@ -107,23 +83,9 @@
 </section>
 
 <section id="spa" class="section">
-<!-- <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/> -->
-<br/>
-<br/>
-<p class="sub-title"><span class="sub-title-text">ans</span></p>
+<h1 class="title">ans</h1>
 <br/>
 <br/>
 <br/>
@@ -146,9 +108,17 @@
 <br/>
 <br/>
 <br/>
-<p class="sub-title"><span class="sub-title-text">contact me</span></p>
+<h1 class="title">contact me</h1>
 <br/>
-<br/>
+<form>
+  <label>e-mail address:</label><br/>
+  <input name="email" type="text" class="feedback-input" placeholder="Email" />
+  <label>message:</label><br/>
+  <p class="lead emoji-picker-container">
+  <textarea name="text" class="feedback-input" placeholder="write something..."  data-emojiable="true"></textarea>
+  </p>
+  <input type="submit" value="SUBMIT"/>
+</form>
 <br/>
 </section>
 
@@ -165,8 +135,8 @@ $(function(){
  $(document).scroll(function() {
     $('#menu').toggle($(this).scrollTop()>1000)
  });​
- </script>
- <script type="text/javascript">
+</script>
+<script type="text/javascript">
   const carls = ["images/carl1.png","images/carl2.jpg","images/carl3.jpg","images/carl4.jpg"];
   let i = 1;
   function nextImage() {
@@ -174,6 +144,20 @@ $(function(){
     i += 1;
     if(i === 4){i = 0}
   }
- </script>
+</script>
+  <script>
+        $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+          emojiable_selector: '[data-emojiable=true]',
+          assetsPath: 'http://onesignal.github.io/emoji-picker/lib/img/',
+          popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
+      });
+  </script>
 </body>
 </html>
