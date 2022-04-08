@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="emoji.css"/>
 </head>
 <body style="background-image: url('images/back.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
 <div id="menu">
@@ -94,29 +95,14 @@
 <section id="contact" class="section">
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <h1 class="title">contact me</h1>
-<br/>
 <form>
   <label>e-mail address:</label><br/>
   <input name="email" type="text" class="feedback-input" placeholder="Email" />
   <label>message:</label><br/>
-  <p class="lead emoji-picker-container">
-  <textarea name="text" class="feedback-input" placeholder="write something..."  data-emojiable="true"></textarea>
-  </p>
+  <div class="emojipicker-container">
+    <textarea name="text" placeholder="write something..."></textarea>
+  </div>
   <input type="submit" value="SUBMIT"/>
 </form>
 <br/>
@@ -134,7 +120,7 @@ $(function(){
 <script type="text/javascript">
  $(document).scroll(function() {
     $('#menu').toggle($(this).scrollTop()>1000)
- });​
+ });
 </script>
 <script type="text/javascript">
   const carls = ["images/carl1.png","images/carl2.jpg","images/carl3.jpg","images/carl4.jpg"];
@@ -145,19 +131,6 @@ $(function(){
     if(i === 4){i = 0}
   }
 </script>
-  <script>
-        $(function() {
-        // Initializes and creates emoji set from sprite sheet
-        window.emojiPicker = new EmojiPicker({
-          emojiable_selector: '[data-emojiable=true]',
-          assetsPath: 'http://onesignal.github.io/emoji-picker/lib/img/',
-          popupButtonClasses: 'fa fa-smile-o'
-        });
-        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-        // It can be called as many times as necessary; previously converted input fields will not be converted again
-        window.emojiPicker.discover();
-      });
-  </script>
+<script src="emoji.js"></script>
 </body>
 </html>
